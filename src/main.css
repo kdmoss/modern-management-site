@@ -1,5 +1,11 @@
+:root {
+    --primary: #050a30;
+    --white: #ffffff;
+}
+
 .logo {
 
     height: 100px;
     width: 100px;
 }
+
