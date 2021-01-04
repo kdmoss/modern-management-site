@@ -4,11 +4,11 @@ source "https://rubygems.org"
 # file and run `bundle install`. Run Jekyll with `bundle exec`, like so:
 #
 #     bundle exec jekyll serve
-#
-# This will help ensure the proper Jekyll version is running.
-# Happy Jekylling!
+
+# Ensure the proper dependencies are loaded
 gem "jekyll", "~> 3.9.0"
 gem "sass", "~> 3.4", ">= 3.4.22"
+# Prior nokigiri versions had a security vulnerability
 gem "nokogiri", ">= 1.11.0.rc4"
 gem "github-pages", "~> 209", group: :jekyll_plugins
 
