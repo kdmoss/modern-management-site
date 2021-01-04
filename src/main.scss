@@ -1,0 +1,152 @@
+---
+--- 
+
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+
+$primary-color: #050a30;
+$primary-color-tinted: rgba($primary-color, 0.7);
+$primary-color-overlay: linear-gradient(0deg, $primary-color-tinted, $primary-color-tinted);
+$font-stack: 'Josefin Sans', sans-serif;
+
+* {
+
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    
+    font-family: $font-stack;
+    font-variant: small-caps
+}
+
+.navbar {
+
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+    font-size: 20px;
+    background: $primary-color;
+}
+
+.container {
+
+    scroll-snap-type: y mandatory;
+}
+
+.container__partial {
+
+    scroll-snap-align: start;
+    height: 100vh;
+    width: 100%;
+}
+
+/* Mobile */
+
+.menu,
+.submenu {
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    list-style-type: none;
+}
+
+.menu__item--logo,
+.menu__item--toggle {
+
+    padding: 10px;
+    font-size: 24px;
+}
+
+.menu__item--dropdown {
+
+    width: 100%;
+    background: lighten($primary-color, 5%);
+}
+
+.active > .menu__item,
+.active > .submenu__item,
+.active > .menu__item--dropdown {
+
+    display: block;
+}
+
+.menu__item--dropdown {
+
+    display: none;
+}
+
+.menu__item,
+.submenu__item {
+
+    display: none;
+    width: 100%;
+    padding: 15px 5px;
+    text-align: center;
+}
+
+.submenu__item--header {
+
+    display: block;
+    width: 100%;
+    padding: 15px 5px;
+
+    text-align: center;
+    background: $primary-color;
+    color: white;
+    max-height: 50px;
+}
+
+a {
+
+    color: white;
+    text-decoration: none;
+}
+
+.parallax--intro {
+
+    height: 100%;
+    
+    background: $primary-color-overlay, url('/img/stock/living-room-ncr.jfif');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.parallax__caption {
+
+    position: absolute;
+    left: 0;
+    top: 30%;
+    width: 100%;
+    text-align: center;
+}
+
+.parallax__caption > span {
+
+    display: block;
+
+    color: white;
+    font-size: 36px;
+    word-spacing: 100vw;
+}
+
+.parallax__caption > a {
+
+    display: block;
+    margin: 10px auto;
+    font-size: 18px;
+    width: 90px;
+    padding: 5px;
+
+    border: 1px solid white;
+}
+
+.logo {
+
+    height: 100px;
+}

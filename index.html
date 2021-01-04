@@ -1,54 +1,61 @@
 <!DOCTYPE html>
 <head>
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="/modern-management-site/src/main.css">
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">    
+    <link rel="stylesheet" href="./src/main.css">
 </head>
 
 <body>
-    <div class="main-header">
-        <nav class="navbar navbar-expand-md navbar-light bg-light">
-            <a class="navbar-brand col-xs-4" href="#">
-                <img class="logo" src="/modern-management-site/img/fence-mm-logo.png" alt="Modern Management Logo">
-            </a>
-            <div class="collapse navbar-collapse">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
+    <nav id="main-navbar" class="navbar" role="navigation">
+        <ul id="main-menu" class="menu">
+            <li class="menu__item--logo">
+                <a href="/">
+                    MM
+                    <!--<img src="./img/mm-logo-nested-white.png"> !-->
+                </a> 
+            </li>
+            <li class="menu__item--toggle">
+                <a href="#" id="toggle-navbar">
+                    <i class="fas fa-bars"></i>
+                </a> 
+            </li>
+            <li class="menu__item">
+                <a href="/">home</a>
+            </li>
+            <li class="menu__item">
+                <a href="/properties">properties</a>
+            <li class="menu__item">
+                <a href="/about">about</a>
+            </li>
+            <li class="menu__item--dropdown">
+                <ul id="portals-submenu" class="submenu">
+                    <li class="submenu__item--header">
+                        portals
+                        <i class="fas fa-caret-down"></i>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Rentals</a>
+                    <li class="submenu__item">
+                        <a href="/portals/tenants">tenants</a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Residents
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Resident Portal</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Rental Application</a>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Contact</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="collapse navbar-collapse">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <button type="button" class="btn btn-light">Light</button>
+                    <li class="submenu__item">
+                        <a href="/portals/owners">owners</a>
                     </li>
                 </ul>
+            </li>
+        </ul>
+    </nav>
+    <div class="container">
+        <section id="home" class="container__partial">
+            <div class="parallax--intro">
+                <div class="parallax__caption">
+                    <img class="logo" src="img/logo/thin-nested-mm-logo-decor-white.png">
+                    <span>modern management</span>
+                    <a href="/contact">contact</a>
+                </div>
             </div>
-        </nav>
+        </section>
+        <section id="about" class="container__partial">
+        </section>
     </div>
-    <script src="/modern-management-site/src/main.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/6cc5dd3dd3.js" crossorigin="anonymous"></script>
+    <script src="./src/main.js"></script>
 </body>
