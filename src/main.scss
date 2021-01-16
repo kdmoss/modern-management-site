@@ -21,6 +21,83 @@ body {
     font-variant: small-caps
 }
 
+a {
+
+    color: white;
+    text-decoration: none;
+}
+
+/* Mobile */
+
+@mixin mobile-menu {
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    list-style-type: none;
+}
+
+@mixin mobile-menu-item {
+
+    display: none;
+    width: 100%;
+    padding: 15px 5px;
+    text-align: center;
+}
+
+.menu {
+
+    @include mobile-menu;
+
+    &__item {
+
+        @include mobile-menu-item;
+
+        &--dropdown {
+
+            width: 100%;
+            display: none;
+        }
+
+        &--name,
+        &--toggle {
+
+            padding: 10px;
+            font-size: 24px;
+        }
+    }
+}
+
+.submenu {
+
+    @include mobile-menu;
+    background: lighten($primary-color, 5%);
+
+    &__item {
+
+        @include mobile-menu-item;
+
+        &--header {
+
+            @extend .submenu__item;
+            display: block;
+        
+            text-align: center;
+            background: $primary-color;
+            color: white;
+            max-height: 50px;
+        }
+    }
+}
+
+.active .menu__item,
+.active .submenu__item,
+.active .menu__item--dropdown {
+
+    display: block;
+}
+
 .navbar {
 
     position: fixed;
@@ -33,120 +110,62 @@ body {
 .container {
 
     scroll-snap-type: y mandatory;
+
+    &__partial {
+
+        scroll-snap-align: start;
+        height: 100vh;
+        width: 100%;        
+    }
 }
 
-.container__partial {
-
-    scroll-snap-align: start;
-    height: 100vh;
-    width: 100%;
-}
-
-/* Mobile */
-
-.menu,
-.submenu {
-
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    list-style-type: none;
-}
-
-.menu__item--logo,
-.menu__item--toggle {
-
-    padding: 10px;
-    font-size: 24px;
-}
-
-.menu__item--dropdown {
-
-    width: 100%;
-    background: lighten($primary-color, 5%);
-}
-
-.active > .menu__item,
-.active > .submenu__item,
-.active > .menu__item--dropdown {
-
-    display: block;
-}
-
-.menu__item--dropdown {
-
-    display: none;
-}
-
-.menu__item,
-.submenu__item {
-
-    display: none;
-    width: 100%;
-    padding: 15px 5px;
-    text-align: center;
-}
-
-.submenu__item--header {
-
-    display: block;
-    width: 100%;
-    padding: 15px 5px;
-
-    text-align: center;
-    background: $primary-color;
-    color: white;
-    max-height: 50px;
-}
-
-a {
-
-    color: white;
-    text-decoration: none;
-}
-
-.parallax--intro {
+.parallax {
 
     height: 100%;
-    
-    background: $primary-color-overlay, url('../img/stock/living-room-ncr.jfif');
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-}
 
-.parallax__caption {
+    &--intro {
+        
+        @extend .parallax;
+        background: $primary-color-overlay, url('../img/stock/living-room-ncr.jfif');
+    }
 
-    position: absolute;
-    left: 0;
-    top: 30%;
-    width: 100%;
-    text-align: center;
-}
+    &__caption {
 
-.parallax__caption > span {
+        position: absolute;
+        left: 0;
+        top: 30%;
+        width: 100%;
+        text-align: center;
 
-    display: block;
+        span {
 
-    color: white;
-    font-size: 36px;
-    word-spacing: 100vw;
-}
-
-.parallax__caption > a {
-
-    display: block;
-    margin: 10px auto;
-    font-size: 18px;
-    width: 90px;
-    padding: 5px;
-
-    border: 1px solid white;
+            display: block;
+    
+            color: white;
+            font-size: 36px;
+            word-spacing: 100vw;
+        }
+    
+        a {
+            display: block;
+            margin: 10px auto;
+            font-size: 18px;
+            width: 90px;
+            padding: 5px;
+        
+            border: 1px solid white;
+        }
+    }
 }
 
 .logo {
+    
+    &--medium {
 
-    height: 100px;
+        height: 100px;
+    }
 }
