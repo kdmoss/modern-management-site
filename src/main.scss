@@ -77,7 +77,7 @@ a {
     &__item {
 
         @include mobile-menu-item;
-
+        
         &--header {
 
             @extend .submenu__item;
@@ -92,8 +92,8 @@ a {
 }
 
 .active .menu__item,
-.active .submenu__item,
-.active .menu__item--dropdown {
+.active .menu__item--dropdown,
+.active > .submenu__item {
 
     display: block;
 }
@@ -110,12 +110,38 @@ a {
 .container {
 
     scroll-snap-type: y mandatory;
+    scroll-snap-align: start;
+    width: 100%;      
 
-    &__partial {
+    &__full {
 
-        scroll-snap-align: start;
+        @extend .container;
         height: 100vh;
-        width: 100%;        
+    }
+
+    &__half {
+
+        @extend .container;
+        height: 50vh;
+    }
+
+    &__header,
+    &__footer {
+
+        display: block;
+        width: 100%;
+        padding: 15px 5px;
+        text-align: center;
+        font-size: 30px;
+        color: $primary-color
+    }
+
+    &__statement {
+
+        padding: 15px;
+        text-align: justify;
+        font-variant: normal;
+        color: lighten(black, 25%);
     }
 }
 
@@ -127,7 +153,7 @@ a {
     background-repeat: no-repeat;
     background-size: cover;
 
-    &--intro {
+    &--home {
         
         @extend .parallax;
         background: $primary-color-overlay, url('../img/stock/living-room-ncr.jfif');
@@ -163,9 +189,21 @@ a {
 }
 
 .logo {
-    
+        
     &--medium {
 
         height: 100px;
+        width: 100px;
+    }
+}
+
+.avatar {
+
+    &--round {
+
+        height: 100px;
+        width: 100px;
+        border-radius: 50%;
+
     }
 }
